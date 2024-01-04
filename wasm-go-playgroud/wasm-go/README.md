@@ -28,3 +28,11 @@ go run webserver.go
 
 Navigate to [http://localhost:9990/](http://localhost:9990/), open the JavaScript debug console, and you should
 see the output. You can modify the program, rebuild `app.wasm`, and refresh to see new output.
+
+# How to run
+
+on port 9990
+
+```bash
+go run webserver.go
+```
