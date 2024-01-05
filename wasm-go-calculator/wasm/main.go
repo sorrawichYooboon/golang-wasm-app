@@ -1,5 +1,35 @@
 package main
 
+import (
+	"fmt"
+	"math"
+	"strconv"
+	"syscall/js"
+)
+
 func main() {
-	println("Hello, WebAssembly!")
+	c := make(chan bool)
+
+	fmt.Println("Hello from WebAssembly")
+	js.Global().Set("square", js.FuncOf(jsSquare))
+
+	<-c
+}
+
+func square(input float64) float64 {
+	return math.Pow(input, 2)
+}
+
+func jsSquare(this js.Value, args []js.Value) interface{} {
+	if len(args) != 1 {
+		return "Invalid no of args passed"
+	}
+
+	input, err := strconv.ParseFloat(args[0].String(), 64)
+	fmt.Println("Input: ", input)
+	if err != nil {
+		return err.Error()
+	}
+	square := square(input)
+	return square
 }

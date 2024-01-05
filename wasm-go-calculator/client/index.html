@@ -3,9 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello, WebAssembly!</title>
-</head>
-<body>
     <script src="public/wasm.js"></script>
     <script>
         const go = new Go();
@@ -13,5 +10,18 @@
             go.run(result.instance);
         });
     </script>
+    <title>Hello, WebAssembly!</title>
+</head>
+<body>
+    <h1>WebAssembly in Go</h1>
+    <h2 id="out">Out: </h2>
+    <input id="x" name="x" type="number" />
+    <input id="button" type="submit" name="button" value="Square" onclick="squareWasm(x.value)"/>
+    <input id="output" name="output" />
 </body>
+<script>
+    var squareWasm = function(input) {
+         output.value = square(input)
+    }
+ </script>
 </html>
