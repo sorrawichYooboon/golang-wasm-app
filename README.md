@@ -7,7 +7,7 @@
 ### summary steps build golang wasm integration with client
 
 1. create a go file with a syscall/js package and a main function separate from the main server
-2. build the go file to wasm with `GOOS=js GOARCH=wasm go build -o main.wasm`
+2. build the go file to wasm with `GOOS=js GOARCH=wasm go build -o main.wasm <source_file_name>.go`
 3. create wasm_exec.js file with `cp "$(go env GOROOT)/misc/wasm/wasm_exec.js"` for the browser to load the wasm file
 4. create a html file/client with a script tag to load the wasm_exec.js file and the wasm file
 5. run a server to serve the html file and the wasm_exec.js file
@@ -15,7 +15,7 @@
 ### summary steps build golang wasm integration with reactjs
 
 1. create a go file with a syscall/js package and a main function separate from the main server
-2. build the go file to wasm with `GOOS=js GOARCH=wasm go build -o main.wasm`
+2. build the go file to wasm with `GOOS=js GOARCH=wasm go build -o main.wasm <source_file_name>.go`
 3. create wasm_exec.js file with `cp "$(go env GOROOT)/misc/wasm/wasm_exec.js"` for the browser to load the wasm file
 4. create a reactjs app with `npx create-react-app wasm-reactjs`
 5. copy the wasm_exec.js and the main.wasm file to the public folder
