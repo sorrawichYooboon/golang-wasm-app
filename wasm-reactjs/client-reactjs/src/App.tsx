@@ -1,4 +1,3 @@
-// import "/wasm_exec.js";
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
@@ -25,7 +24,7 @@ function App() {
         &nbsp;
         <button
           onClick={() => {
-            alert(window.myGolangFunction(10, 3));
+            alert(window.myGolangFunction(10, 15));
           }}
         >
           Click here to invoke WebAssembly!
