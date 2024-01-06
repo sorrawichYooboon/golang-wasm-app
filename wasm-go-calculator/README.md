@@ -17,7 +17,7 @@ cd wasm/ && GOOS=js GOARCH=wasm go build -o ../public/wasm.wasm && cd ..
 ### Copy the compiled JavaScript WebAssembly support file to the project
 
 ```bash
-cp "$(go env GOROOT)/misc/wasm/wasm_exec.js" ../public/wasm.js
+cp "$(go env GOROOT)/misc/wasm/wasm_exec.js" ../public/wasm_exec.js
 ```
 
 ### Run the project's web server from project root
